@@ -79,9 +79,17 @@
     }
 
     .contact-block a {
-      display: inline-block;
-      margin: 2px 8px 2px 0;
-    }
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 2px 8px 2px 0;
+}
+
+.contact-block i {
+  width: 16px;
+  color: var(--muted);
+  text-align: center;
+}
 
     .intro h1 {
       margin: 0;
@@ -220,6 +228,7 @@
       .profile-img { width: 170px; height: 170px; }
       .highlight-grid { grid-template-columns: 1fr; }
     }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </style>
 </head>
 <body>
@@ -229,16 +238,16 @@
         <!-- Save your uploaded photo as assets/profile.jpg in the GitHub repo. -->
         <img class="profile-img" src="assets/Arnab_pic.jpg" alt="Arnab Acharya profile photo" />
         <div class="contact-block">
-          <strong>Contact</strong>
-<a href="mailto:aachar21@asu.edu">✉️ Email</a>
+         <strong>Contact</strong>
+<a href="mailto:aachar21@asu.edu"><i class="fa-solid fa-envelope"></i> Email</a>
 
 <strong>Documents</strong>
-<a href="assets/Arnab_Acharya_CV.pdf">📄 CV</a>
+<a href="assets/Arnab_Acharya_CV.pdf"><i class="fa-regular fa-file-lines"></i> CV</a>
 
 <strong>Research Profiles</strong>
-<a href="https://scholar.google.com/citations?user=5-eZpEgAAAAJ&hl=en&oi=sra">🎓 Google Scholar</a>
-<a href="https://www.linkedin.com/in/arnab-acharya-930100127/">💼 LinkedIn</a>
-<a href="#">💻 GitHub</a>
+<a href="https://scholar.google.com/citations?user=5-eZpEgAAAAJ&hl=en&oi=sra"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>
+<a href="https://www.linkedin.com/in/arnab-acharya-930100127/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+<a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
         </div>
       </aside>
 
