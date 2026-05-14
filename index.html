@@ -16,6 +16,8 @@
       --line: #e5e7eb;
       --soft: #f8fafc;
       --accent: #0f766e;
+      --asu-gold: #ffc627;
+      --asu-maroon: #8c1d40;
       --max: 1080px;
     }
 
@@ -27,46 +29,6 @@
       scroll-behavior: smooth;
     }
 
-.subtitle,
-.tags,
-#research-overview,
-#research-highlights,
-#publications,
-#experience,
-#awards-service {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: landingRise 0.65s ease-out forwards;
-}
-
-.subtitle {
-  animation-delay: 0.18s;
-}
-
-.tags {
-  animation-delay: 0.28s;
-}
-
-#research-overview {
-  animation-delay: 0.38s;
-}
-
-#research-highlights {
-  animation-delay: 0.48s;
-}
-
-#publications {
-  animation-delay: 0.58s;
-}
-
-#experience {
-  animation-delay: 0.68s;
-}
-
-#awards-service {
-  animation-delay: 0.78s;
-}
-    
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -85,37 +47,39 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-4px); }
     }
-@keyframes titleHighlightSweep {
-  0% {
-    transform: translateX(-120%);
-    opacity: 0;
-  }
 
-  12% {
-    opacity: 1;
-  }
+    @keyframes titleHighlightSweep {
+      0% {
+        transform: translateX(-120%);
+        opacity: 0;
+      }
 
-  78% {
-    opacity: 1;
-  }
+      12% {
+        opacity: 1;
+      }
 
-  100% {
-    transform: translateX(120%);
-    opacity: 0;
-  }
-}
+      78% {
+        opacity: 1;
+      }
 
-@keyframes landingRise {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+      100% {
+        transform: translateX(120%);
+        opacity: 0;
+      }
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    @keyframes landingRise {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -304,8 +268,7 @@
       color: var(--muted);
     }
 
-    .contact-block strong,
-    .side-nav strong {
+    .contact-block strong {
       display: block;
       color: var(--text);
       margin: 16px 0 6px;
@@ -328,68 +291,45 @@
       flex: 0 0 16px;
     }
 
-    .side-nav {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-    }
-
-    .side-nav a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 7px 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
-      transition: color 0.18s ease, padding-left 0.18s ease;
-    }
-
-    .side-nav a:hover {
-      color: var(--accent);
-      padding-left: 4px;
-      text-decoration: none;
-    }
-
     .intro h1 {
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 3.1rem);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
-  overflow: hidden;
-  padding: 0 0.04em;
-  isolation: isolate;
-}
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      overflow: hidden;
+      padding: 0.04em 0.08em;
+      isolation: isolate;
+    }
 
-.intro h1::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.04em;
-  width: 100%;
-  height: 0.95em;
-  background: rgba(255, 198, 39, 0.68); /* ASU Gold */
-  border-radius: 4px;
-  transform: translateX(-120%);
-  animation: titleHighlightSweep 1.35s ease-out 0.35s 1 forwards;
-  z-index: -1;
-}
+    .intro h1::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.04em;
+      width: 100%;
+      height: 0.95em;
+      background: rgba(255, 198, 39, 0.55);
+      border-radius: 8px;
+      transform: translateX(-120%);
+      animation: titleHighlightSweep 1.35s ease-out 0.35s 1 forwards;
+      z-index: -1;
+    }
 
-.intro h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.04em;
-  width: 100%;
-  height: 0.95em;
-  background: rgba(140, 29, 64, 0.18); /* ASU Maroon tint */
-  border-radius: 4px;
-  transform: translateX(-120%);
-  animation: titleHighlightSweep 1.35s ease-out 0.43s 1 forwards;
-  z-index: -2;
-}
+    .intro h1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.04em;
+      width: 100%;
+      height: 0.95em;
+      background: rgba(140, 29, 64, 0.12);
+      border-radius: 8px;
+      transform: translateX(-120%);
+      animation: titleHighlightSweep 1.35s ease-out 0.43s 1 forwards;
+      z-index: -2;
+    }
 
     .subtitle {
       margin: 10px 0 14px;
@@ -398,69 +338,75 @@
     }
 
     .top-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 18px 0 24px;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: landingRise 0.65s ease-out 0.24s forwards;
-}
-
-.top-nav a {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--soft);
-  color: var(--text);
-  font-size: 0.92rem;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-}
-
-.top-nav a:hover {
-  transform: translateY(-2px);
-  border-color: rgba(140, 29, 64, 0.28);
-  background: rgba(255, 198, 39, 0.18);
-  text-decoration: none;
-}
-
-@media (max-width: 780px) {
-  .top-nav {
-    gap: 8px;
-  }
-
-  .top-nav a {
-    font-size: 0.86rem;
-    padding: 6px 10px;
-  }
-}
-    .tags {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
-      margin: 18px 0 28px;
+      gap: 0;
+      margin: 18px 0 0;
     }
 
-    .tag {
-      padding: 5px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--soft);
-      color: #334155;
-      font-size: 0.86rem;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    .top-nav a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 18px;
+      color: var(--text);
+      font-size: 0.98rem;
+      border-bottom: 4px solid transparent;
+      transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    .tag:hover {
-      transform: translateY(-2px);
-      border-color: rgba(15, 118, 110, 0.35);
-      background: #f0fdfa;
+    .top-nav a:hover {
+      color: var(--accent);
+      background: rgba(255, 198, 39, 0.08);
+      text-decoration: none;
     }
 
-   
-}
+    .top-nav a.active {
+      border-bottom-color: var(--asu-gold);
+      font-weight: 700;
+    }
+
+    .home-link {
+      gap: 7px;
+    }
+
+    .home-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+    }
+
+    .nav-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--line);
+      margin: 0 0 26px;
+    }
+
+    .subtitle,
+    .top-nav,
+    .nav-divider,
+    #research-overview,
+    #research-highlights,
+    #publications,
+    #experience,
+    #awards-service {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: landingRise 0.65s ease-out forwards;
+    }
+
+    .subtitle { animation-delay: 0.18s; }
+    .top-nav { animation-delay: 0.28s; }
+    .nav-divider { animation-delay: 0.34s; }
+    #research-overview { animation-delay: 0.38s; }
+    #research-highlights { animation-delay: 0.48s; }
+    #publications { animation-delay: 0.58s; }
+    #experience { animation-delay: 0.68s; }
+    #awards-service { animation-delay: 0.78s; }
+
     section {
       border-top: 1px solid var(--line);
       padding-top: 26px;
@@ -588,6 +534,12 @@
         height: 170px;
       }
 
+      .top-nav a {
+        padding: 0 12px;
+        font-size: 0.9rem;
+        min-height: 38px;
+      }
+
       .highlight-grid {
         grid-template-columns: 1fr;
       }
@@ -644,8 +596,6 @@
             GitHub
           </a>
         </div>
-
-       
       </aside>
 
       <div class="sidebar-overlay" aria-hidden="true"></div>
@@ -657,21 +607,21 @@
         <p class="subtitle">Ph.D. in Power Electronics, Arizona State University</p>
 
         <nav class="top-nav" aria-label="Main navigation">
-  <a href="about.html">About Me</a>
-  <a href="#research-highlights">Research Highlights</a>
-  <a href="#publications">Publications</a>
-  <a href="#experience">Experience</a>
-  <a href="#awards-service">Awards &amp; Service</a>
-</nav>
-        
-        <div class="tags">
-          <span class="tag">Soft-switching</span>
-          <span class="tag">Grid-Forming Inverters</span>
-          <span class="tag">dVOC Control</span>
-          <span class="tag">LVRT / Fault Ride-Through</span>
-          <span class="tag">SiC / GaN Converters</span>
-          <span class="tag">Renewable Energy Systems</span>
-        </div>
+          <a class="active home-link" href="index.html" aria-label="Home">
+            <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span>Home</span>
+          </a>
+
+          <a href="about.html">About Me</a>
+          <a href="#research-highlights">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
+          <a href="#awards-service">Awards &amp; Service</a>
+        </nav>
+
+        <div class="nav-divider"></div>
 
         <section id="research-overview">
           <h2>Research Overview</h2>
