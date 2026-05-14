@@ -260,7 +260,7 @@
     }
 
     .main-profile-img {
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
 
     .contact-block {
@@ -302,7 +302,28 @@
       padding: 0.04em 0.08em;
       isolation: isolate;
     }
+.landing-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 18px;
+}
 
+.landing-title {
+  min-width: 0;
+}
+
+.landing-title .subtitle {
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .landing-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+}
     .intro h1::before {
       content: "";
       position: absolute;
@@ -624,13 +645,17 @@
 
       <div class="sidebar-overlay" aria-hidden="true"></div>
 
-      <div class="intro">
-        <img class="profile-img main-profile-img" src="assets/profile.jpg" alt="Arnab Acharya profile photo" />
+     <div class="intro">
+  <div class="landing-header">
+    <img class="profile-img main-profile-img" src="assets/profile.jpg" alt="Arnab Acharya profile photo" />
 
-        <h1>Arnab Acharya</h1>
-        <p class="subtitle">Ph.D. in Power Electronics, Arizona State University</p>
+    <div class="landing-title">
+      <h1>Arnab Acharya</h1>
+      <p class="subtitle">Ph.D. in Power Electronics, Arizona State University</p>
+    </div>
+  </div>
 
-        <div class="top-nav-wrap">
+  <div class="top-nav-wrap">
           <nav class="top-nav" aria-label="Main navigation">
             <a class="active home-link" href="index.html" aria-label="Home" title="Home">
               <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
