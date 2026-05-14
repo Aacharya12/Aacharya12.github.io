@@ -16,7 +16,7 @@
       --line: #e5e7eb;
       --soft: #f8fafc;
       --accent: #0f766e;
-      --max: 880px;
+      --max: 1080px;
     }
 
     * {
@@ -41,6 +41,23 @@
       to { opacity: 1; }
     }
 
+    @keyframes highlightSweep {
+      0% {
+        transform: translateX(-140%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.35;
+      }
+      55% {
+        opacity: 0.28;
+      }
+      100% {
+        transform: translateX(180%);
+        opacity: 0;
+      }
+    }
+
     a {
       color: var(--link);
       text-decoration: none;
@@ -53,7 +70,7 @@
     .page {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 52px 24px 72px;
+      padding: 48px 24px 72px;
     }
 
     .back-link {
@@ -70,37 +87,75 @@
       text-decoration: none;
     }
 
+    .about-hero {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 34px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .about-photo {
+      width: 100%;
+      max-width: 360px;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.10);
+      display: block;
+    }
+
+    .bio-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      padding: 30px 28px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .bio-card::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: 0;
+      width: 42%;
+      height: 140%;
+      background: linear-gradient(
+        110deg,
+        rgba(255,255,255,0) 0%,
+        rgba(15, 118, 110, 0.10) 45%,
+        rgba(255,255,255,0) 100%
+      );
+      transform: translateX(-140%);
+      animation: highlightSweep 1.35s ease-out 0.35s 1;
+      pointer-events: none;
+    }
+
     h1 {
       margin: 0 0 10px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.12;
+      font-size: clamp(2.1rem, 4vw, 3.15rem);
+      line-height: 1.1;
       letter-spacing: -0.04em;
     }
 
     .subtitle {
-      margin: 0 0 28px;
+      margin: 0 0 18px;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
     }
-    
-.about-photo {
-  width: 220px;
-  height: 220px;
-  border-radius: 18px;
-  object-fit: cover;
-  display: block;
-  margin: 24px 0 30px;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
-}
 
-@media (max-width: 700px) {
-  .about-photo {
-    width: 180px;
-    height: 180px;
-  }
-}
-    
+    .lead {
+      font-size: 1.04rem;
+      margin-bottom: 14px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
     section {
       border-top: 1px solid var(--line);
       padding-top: 26px;
@@ -111,14 +166,6 @@
       font-size: 1.25rem;
       margin: 0 0 14px;
       letter-spacing: -0.02em;
-    }
-
-    p {
-      margin: 0 0 15px;
-    }
-
-    .lead {
-      font-size: 1.04rem;
     }
 
     .info-grid {
@@ -154,9 +201,31 @@
       font-size: 0.9rem;
     }
 
+    @media (max-width: 900px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .about-photo {
+        max-width: 320px;
+        height: 400px;
+      }
+    }
+
     @media (max-width: 700px) {
       .page {
         padding: 34px 18px 56px;
+      }
+
+      .about-photo {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+      }
+
+      .bio-card {
+        padding: 22px 18px;
       }
 
       .info-grid {
@@ -170,24 +239,26 @@
   <main class="page">
     <a class="back-link" href="index.html">← Back to home</a>
 
-    <h1>About Me</h1>
-    <p class="subtitle">Arnab Acharya · Power Electronics Researcher · Arizona State University</p>
-    <img class="about-photo" src="assets/arnab_me.jpg" alt="Arnab Acharya" />
-    <section>
-      <h2>Brief Biography</h2>
+    <div class="about-hero">
+      <img class="about-photo" src="assets/arnab_me.jpg" alt="Arnab Acharya" />
 
-      <p class="lead">
-        I am a Ph.D. researcher in Power Electronics at Arizona State University, working on grid-forming inverter control, fault ride-through, and reliable operation of inverter-based resources in renewable-rich power systems.
-      </p>
+      <div class="bio-card">
+        <h1>Arnab Acharya</h1>
+        <p class="subtitle">Power Electronics Researcher · Arizona State University</p>
 
-      <p>
-        My research focuses on dispatchable virtual oscillator control, current limiting, low-voltage ride-through, and stability of grid-forming inverters under large grid disturbances. I am interested in control methods that preserve the voltage-source behavior of grid-forming converters while making them practical for real power-system faults and standards-driven operation.
-      </p>
+        <p class="lead">
+          I am a Ph.D. researcher in Power Electronics at Arizona State University, working on grid-forming inverter control, fault ride-through, and reliable operation of inverter-based resources in renewable-rich power systems.
+        </p>
 
-      <p>
-        I enjoy working across the full stack of power electronics research: control theory, electromagnetic transient simulation, embedded implementation, hardware testing, and experimental validation. My longer-term goal is to contribute to industry R&amp;D in power electronics, renewable energy systems, and advanced inverter control.
-      </p>
-    </section>
+        <p>
+          My research focuses on dispatchable virtual oscillator control, current limiting, low-voltage ride-through, and stability of grid-forming inverters under large grid disturbances. I am interested in control methods that preserve the voltage-source behavior of grid-forming converters while making them practical for real power-system faults and standards-driven operation.
+        </p>
+
+        <p>
+          I enjoy working across the full stack of power electronics research: control theory, electromagnetic transient simulation, embedded implementation, hardware testing, and experimental validation. My longer-term goal is to contribute to industry R&amp;D in power electronics, renewable energy systems, and advanced inverter control.
+        </p>
+      </div>
+    </div>
 
     <section>
       <h2>Background</h2>
