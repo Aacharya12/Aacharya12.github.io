@@ -106,6 +106,18 @@
       display: block;
     }
 
+    .eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #f0fdfa;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
     .bio-card {
       position: relative;
       overflow: hidden;
@@ -117,23 +129,23 @@
     }
 
     .bio-card::before {
-      content: "";
-      position: absolute;
-      top: -20%;
-      left: 0;
-      width: 42%;
-      height: 140%;
-      background: linear-gradient(
-        110deg,
-        rgba(255,255,255,0) 0%,
-        rgba(15, 118, 110, 0.10) 45%,
-        rgba(255,255,255,0) 100%
-      );
-      transform: translateX(-140%);
-      animation: highlightSweep 1.35s ease-out 0.35s 1;
-      pointer-events: none;
-    }
-
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 55%;
+  height: 150%;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0) 0%,
+    rgba(15, 118, 110, 0.18) 42%,
+    rgba(37, 99, 235, 0.12) 55%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: translateX(-150%);
+  animation: highlightSweep 1.75s ease-out 0.35s 1;
+  pointer-events: none;
+}
     h1 {
       margin: 0 0 10px;
       font-size: clamp(2.1rem, 4vw, 3.15rem);
@@ -243,8 +255,9 @@
       <img class="about-photo" src="assets/arnab_me.jpg" alt="Arnab Acharya" />
 
       <div class="bio-card">
-        <h1>About Me</h1>
-        <p class="subtitle">Power Electronics Researcher · Arizona State University</p>
+  <p class="eyebrow">About Me</p>
+  <h1>Arnab Acharya</h1>
+  <p class="subtitle">Power Electronics Researcher · Arizona State University</p>
 
         <p class="lead">
           I am a Ph.D. researcher in Power Electronics at Arizona State University, working on grid-forming inverter control, fault ride-through, and reliable operation of inverter-based resources in renewable-rich power systems.
