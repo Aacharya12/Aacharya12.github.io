@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnab | Power Electronics Researcher</title>
-  <meta name="description" content="Personal academic website for Arnab, PhD researcher in power electronics and grid-forming inverter control." />
+  <title>Arnab Acharya | Power Electronics Researcher</title>
+  <meta name="description" content="Personal academic website of Arnab Acharya, Ph.D. candidate in Electrical Engineering at Arizona State University working on power electronics, grid-forming inverters, and SiC converter systems." />
   <style>
     :root {
       --bg: #ffffff;
@@ -176,23 +176,27 @@
       margin: 3px 0 10px;
     }
 
-    .publication-list {
+    .publication-list,
+    .experience-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .publication-list li {
+    .publication-list li,
+    .experience-list li {
       margin-bottom: 16px;
       padding-bottom: 16px;
       border-bottom: 1px dashed var(--line);
     }
 
-    .publication-list li:last-child {
+    .publication-list li:last-child,
+    .experience-list li:last-child {
       border-bottom: 0;
     }
 
-    .paper-title {
+    .paper-title,
+    .role-title {
       font-weight: 700;
     }
 
@@ -222,54 +226,52 @@
   <main class="page">
     <div class="hero">
       <aside class="profile-card">
-        <!-- Replace assets/profile.jpg with your own image file. -->
-        <img class="profile-img" src="assets/profile.jpg" alt="Arnab profile photo" />
+        <!-- Save your uploaded photo as assets/profile.jpg in the GitHub repo. -->
+        <img class="profile-img" src="assets/profile.jpg" alt="Arnab Acharya profile photo" />
         <div class="contact-block">
           <strong>Contact</strong>
-          <a href="mailto:your.email@asu.edu">your.email@asu.edu</a>
+          <a href="mailto:aachar21@asu.edu">aachar21@asu.edu</a>
 
           <strong>Documents</strong>
-          <a href="assets/Arnab_CV.pdf">CV</a>
-          <a href="assets/research-statement.pdf">Research Statement</a>
-          <a href="assets/teaching-statement.pdf">Teaching Statement</a>
+          <a href="assets/Arnab_Acharya_CV.pdf">CV</a>
 
           <strong>Research Profiles</strong>
-          <a href="#">Google Scholar</a>
-          <a href="#">IEEE Xplore</a>
+          <a href="https://scholar.google.com/citations?user=5-eZpEgAAAAJ&hl=en&oi=sra">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/arnab-acharya-930100127/">LinkedIn</a>
           <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
+          <a href="#">IEEE Xplore</a>
         </div>
       </aside>
 
       <div class="intro">
-        <h1>Arnab</h1>
-        <p class="subtitle">Ph.D. Candidate in Electrical Engineering · Power Electronics · Arizona State University</p>
+        <h1>Arnab Acharya</h1>
+        <p class="subtitle">Ph.D. Candidate in Electrical Engineering · Arizona State University</p>
         <div class="tags">
+          <span class="tag">Power Electronics</span>
           <span class="tag">Grid-Forming Inverters</span>
           <span class="tag">dVOC Control</span>
           <span class="tag">LVRT / Fault Ride-Through</span>
-          <span class="tag">IEEE 1547 / IEEE 2800</span>
-          <span class="tag">SiC Power Converters</span>
+          <span class="tag">SiC / GaN Converters</span>
           <span class="tag">Renewable Energy Systems</span>
         </div>
 
         <section>
           <h2>Research Overview</h2>
           <p class="lead">
-            I work on control, protection, and hardware-aware design of power-electronic converters for renewable-rich power systems. My current research focuses on grid-forming inverter control, especially dispatchable virtual oscillator control, fault ride-through current limiting, and stability-preserving operation under severe grid disturbances.
+            I am a Ph.D. candidate in Electrical Engineering at Arizona State University, working on power electronics and grid-forming inverter control for renewable-rich power systems. My current research focuses on dispatchable virtual oscillator control, fault ride-through, current limiting, and stability of grid-forming inverters under adverse grid conditions.
           </p>
           <p>
-            My broader goal is to make inverter-dominated power systems more resilient, standards-compliant, and practically deployable by combining nonlinear control design, electromagnetic transient simulation, and experimental validation on high-frequency SiC converter platforms.
+            My work combines nonlinear control design, electromagnetic transient simulation, embedded implementation, and experimental validation on high-power three-phase SiC/IGBT inverter platforms. I am especially interested in practical control and protection methods that allow inverter-based resources to behave reliably during large grid disturbances.
           </p>
         </section>
 
         <section>
           <h2>About Me</h2>
           <p>
-            I am a Ph.D. candidate in Electrical Engineering at Arizona State University. My research lies at the intersection of power electronics, power systems, and control, with an emphasis on grid-forming inverters for solar PV and future low-inertia grids.
+            I am part of the power electronics and power systems research community at ASU. My Ph.D. research is connected to grid-forming inverter applications, including high-power inverter operation, low-voltage ride-through, and standards-oriented performance under grid transients.
           </p>
           <p>
-            Before and during my Ph.D., I have worked on silicon-carbide converter characterization, automotive traction-inverter related hardware, and grid-connected inverter control. I am interested in industry R&amp;D roles where rigorous control theory meets real converter hardware.
+            Previously, I worked at Onsemi on SiC device characterization and automotive traction-inverter applications, at the National Renewable Energy Laboratory on electric-vehicle grid integration and battery systems, and at Mercedes-Benz Research &amp; Development India on EV onboard-charger development and technical compliance.
           </p>
         </section>
 
@@ -279,41 +281,41 @@
             <div class="highlight-card">
               <div class="num">01</div>
               <h3>Fault-resilient GFM control</h3>
-              <p class="small">Current limiting strategies for dVOC-based grid-forming inverters during balanced and unbalanced voltage sags.</p>
+              <p class="small">Current limiting and LVRT strategies for dVOC-based grid-forming inverters during severe grid disturbances.</p>
             </div>
             <div class="highlight-card">
               <div class="num">02</div>
-              <h3>Voltage-guided PV curtailment</h3>
-              <p class="small">Fast DC-link protection through inverter-side voltage-aware MPPT curtailment without dissipative braking hardware.</p>
+              <h3>High-power inverter validation</h3>
+              <p class="small">Simulation and implementation of three-phase SiC/IGBT inverter systems for grid-forming applications.</p>
             </div>
             <div class="highlight-card">
               <div class="num">03</div>
-              <h3>Soft-switching SiC converters</h3>
-              <p class="small">Auxiliary resonant commutated pole concepts for high-efficiency, high-frequency SiC inverter operation.</p>
+              <h3>Soft-switching converters</h3>
+              <p class="small">Topology and hardware design for high-efficiency SiC/GaN power converters and data-center power delivery.</p>
             </div>
           </div>
 
           <details open>
-            <summary>Grid-Forming Inverter Current Limiting</summary>
-            <p class="venue">dVOC · LVRT · IEEE 1547 / IEEE 2800</p>
+            <summary>Grid-Forming Inverter Control and Fault Ride-Through</summary>
+            <p class="venue">dVOC · LVRT · IEEE 2800 · high-power inverter control</p>
             <p>
-              I develop voltage-source-preserving current limiting strategies that avoid relying on a conventional inner current loop. The work combines power-angle limiting, voltage-magnitude scaling, and sequence-aware current shaping to keep inverter currents within practical and standards-driven envelopes during grid faults.
+              I study control and protection methods for grid-forming inverters operating under large grid transients, frequency deviations, and voltage sag conditions. The goal is to maintain voltage-source behavior while keeping inverter current within safe and standards-compliant limits.
             </p>
           </details>
 
           <details>
-            <summary>Lossless DC-Link Protection for PV Inverters</summary>
-            <p class="venue">PV systems · MPPT curtailment · EMT simulation</p>
+            <summary>Negative-Sequence Current Control under Asymmetrical Grid Conditions</summary>
+            <p class="venue">Unbalanced faults · sequence control · grid-forming inverters</p>
             <p>
-              This work investigates inverter-side voltage-guided MPPT curtailment as a fast, non-dissipative way to prevent DC-link overvoltage during low-voltage ride-through events, while maintaining smooth recovery after fault clearing.
+              My work includes dual-dVOC based control methods for negative-sequence current injection, targeting improved inverter behavior under asymmetrical grid conditions without losing the core benefits of grid-forming operation.
             </p>
           </details>
 
           <details>
-            <summary>Asymmetric Auxiliary Resonant Commutated Pole</summary>
-            <p class="venue">SiC MOSFETs · ZVT · high-frequency inverter hardware</p>
+            <summary>Fast-Transient DC-DC Converters for Data-Center Applications</summary>
+            <p class="venue">48 V to PoL converters · GaN hardware · dynamic bus voltage reconfiguration</p>
             <p>
-              I study soft-switching auxiliary circuit architectures that reduce switching loss in high-frequency SiC inverters while avoiding split-DC-link balancing and excessive auxiliary switch voltage stress.
+              During my master's research, I developed dynamic bus voltage reconfiguration techniques for two-stage multi-phase buck converters, aimed at improving load-transient and reference-transient performance while reducing output capacitance.
             </p>
           </details>
         </section>
@@ -322,33 +324,56 @@
           <h2>Selected Publications</h2>
           <ul class="publication-list">
             <li>
-              <div class="paper-title">[Paper title on dVOC-based grid-forming inverter current limiting]</div>
-              <div class="small">Arnab, Coauthors · Conference/Journal · Year</div>
-              <div class="small"><a href="#">Paper</a> · <a href="#">Slides</a> · <a href="#">BibTeX</a></div>
+              <div class="paper-title">Dynamic Bus Voltage Reconfiguration in a Two-Stage Multi-Phase Converter for Fast Transients</div>
+              <div class="small">A. Acharya, V. Inder Kumar, and S. Kapat · IEEE Journal of Emerging and Selected Topics in Power Electronics, 2021</div>
             </li>
             <li>
-              <div class="paper-title">[Paper title on voltage-guided MPPT curtailment for DC-link protection]</div>
-              <div class="small">Arnab, Coauthors · Conference/Journal · Year</div>
-              <div class="small"><a href="#">Paper</a> · <a href="#">Poster</a> · <a href="#">BibTeX</a></div>
+              <div class="paper-title">Dual-dVOC Based Controlled Negative Sequence Current Injection for Grid-Forming Inverters under Asymmetrical Grid Conditions</div>
+              <div class="small">A. Acharya and R. Ayyanar · IEEE Power &amp; Energy Society General Meeting, 2023</div>
             </li>
             <li>
-              <div class="paper-title">[Paper title on AARCP / ZVT SiC inverter hardware]</div>
-              <div class="small">Arnab, Coauthors · Conference/Journal · Year</div>
-              <div class="small"><a href="#">Paper</a> · <a href="#">Video</a> · <a href="#">BibTeX</a></div>
+              <div class="paper-title">Enhancing Stability of dVOC Controlled Grid-Forming Inverters Under Large Grid Transients - A Power Angle Based Approach</div>
+              <div class="small">A. Acharya and R. Ayyanar · IEEE Energy Conversion Congress and Exposition, 2023</div>
+            </li>
+            <li>
+              <div class="paper-title">Dynamic Bus Voltage Configuration in a Two-Stage Multi-Phase Buck Converter to Mitigate Transients</div>
+              <div class="small">A. Acharya, V. I. Kumar, and S. Kapat · IEEE Applied Power Electronics Conference and Exposition, 2019</div>
             </li>
           </ul>
         </section>
 
         <section>
-          <h2>News</h2>
-          <p><strong>May 2026:</strong> Preparing dissertation work on grid-forming inverter control and fault ride-through.</p>
-          <p><strong>2026:</strong> Add your latest paper acceptance, award, tutorial, internship, or defense milestone here.</p>
+          <h2>Experience</h2>
+          <ul class="experience-list">
+            <li>
+              <div class="role-title">Graduate Application Intern · Onsemi</div>
+              <div class="small">Automotive Traction Solution Group · May-August 2024</div>
+              <p class="small">SiC device characterization, double-pulse testing, loss modeling, gate-driver PCB testing, and traction-inverter protection.</p>
+            </li>
+            <li>
+              <div class="role-title">Graduate Intern · National Renewable Energy Laboratory</div>
+              <div class="small">Electric Vehicle Grid Integration Team · May-August 2023</div>
+              <p class="small">Battery systems, multi-chemistry EV/BTMS battery stacks, and active cell balancing using a dual-active-bridge converter platform.</p>
+            </li>
+            <li>
+              <div class="role-title">Engineer · Mercedes-Benz Research &amp; Development India</div>
+              <div class="small">Technical Compliance Management System Team · February 2020-July 2021</div>
+              <p class="small">EV onboard-charger development, DC network optimization, and automotive technical compliance.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Awards and Service</h2>
+          <p><strong>Professional Education Seminar, APEC 2024:</strong> Conducted a seminar on PV inverter design, including topologies, control, and system considerations.</p>
+          <p><strong>Best Presentation Award, APEC 2019:</strong> Recognized for work presented in the “Converters for Data Centers” lecture session.</p>
+          <p><strong>Reviewer Service:</strong> IEEE Transactions on Power Electronics, IEEE Journal of Emerging and Selected Topics in Industrial Electronics, and IEEE Transactions on Circuits and Systems II.</p>
         </section>
       </div>
     </div>
 
     <footer>
-      Last updated: May 2026 · Built for GitHub Pages · Replace placeholder links before publishing.
+      Last updated: May 2026 · Built for GitHub Pages.
     </footer>
   </main>
 </body>
