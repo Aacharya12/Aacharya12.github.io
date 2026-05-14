@@ -397,6 +397,45 @@
       color: var(--muted);
     }
 
+    .top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 24px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: landingRise 0.65s ease-out 0.24s forwards;
+}
+
+.top-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--text);
+  font-size: 0.92rem;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.top-nav a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(140, 29, 64, 0.28);
+  background: rgba(255, 198, 39, 0.18);
+  text-decoration: none;
+}
+
+@media (max-width: 780px) {
+  .top-nav {
+    gap: 8px;
+  }
+
+  .top-nav a {
+    font-size: 0.86rem;
+    padding: 6px 10px;
+  }
+}
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -606,14 +645,7 @@
           </a>
         </div>
 
-        <nav class="side-nav" aria-label="Page navigation">
-          <strong>On this page</strong>
-          <a href="about.html">About Me <span>→</span></a>
-          <a href="#research-highlights">Research Highlights <span>→</span></a>
-          <a href="#publications">Publications <span>→</span></a>
-          <a href="#experience">Experience <span>→</span></a>
-          <a href="#awards-service">Awards &amp; Service <span>→</span></a>
-        </nav>
+       
       </aside>
 
       <div class="sidebar-overlay" aria-hidden="true"></div>
@@ -623,6 +655,14 @@
 
         <h1>Arnab Acharya</h1>
         <p class="subtitle">Ph.D. in Power Electronics, Arizona State University</p>
+
+        <nav class="top-nav" aria-label="Main navigation">
+  <a href="about.html">About Me</a>
+  <a href="#research-highlights">Research Highlights</a>
+  <a href="#publications">Publications</a>
+  <a href="#experience">Experience</a>
+  <a href="#awards-service">Awards &amp; Service</a>
+</nav>
         
         <div class="tags">
           <span class="tag">Soft-switching</span>
