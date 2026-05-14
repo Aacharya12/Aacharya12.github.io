@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arnab | Power Electronics Researcher</title>
+  <meta name="description" content="Personal academic website for Arnab, PhD researcher in power electronics and grid-forming inverter control." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --link: #2563eb;
+      --line: #e5e7eb;
+      --soft: #f8fafc;
+      --accent: #0f766e;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .profile-card {
+      position: sticky;
+      top: 24px;
+    }
+
+    .profile-img {
+      width: 210px;
+      height: 210px;
+      border-radius: 18px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+      border: 1px solid var(--line);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .contact-block {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .contact-block strong {
+      display: block;
+      color: var(--text);
+      margin: 14px 0 5px;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-block a {
+      display: inline-block;
+      margin: 2px 8px 2px 0;
+    }
+
+    .intro h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 10px 0 14px;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 28px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      color: #334155;
+      font-size: 0.86rem;
+    }
+
+    section {
+      border-top: 1px solid var(--line);
+      padding-top: 26px;
+      margin-top: 28px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: 1.02rem;
+      margin: 0;
+    }
+
+    p { margin: 0 0 14px; }
+
+    .lead {
+      font-size: 1.03rem;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .highlight-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .highlight-card .num {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      background: #fff;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .venue {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 3px 0 10px;
+    }
+
+    .publication-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .publication-list li {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .publication-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .paper-title {
+      font-weight: 700;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 38px;
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 780px) {
+      .page { padding: 28px 18px 48px; }
+      .hero { grid-template-columns: 1fr; gap: 22px; }
+      .profile-card { position: static; }
+      .profile-img { width: 170px; height: 170px; }
+      .highlight-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="hero">
+      <aside class="profile-card">
+        <!-- Replace assets/profile.jpg with your own image file. -->
+        <img class="profile-img" src="assets/profile.jpg" alt="Arnab profile photo" />
+        <div class="contact-block">
+          <strong>Contact</strong>
+          <a href="mailto:your.email@asu.edu">your.email@asu.edu</a>
+
+          <strong>Documents</strong>
+          <a href="assets/Arnab_CV.pdf">CV</a>
+          <a href="assets/research-statement.pdf">Research Statement</a>
+          <a href="assets/teaching-statement.pdf">Teaching Statement</a>
+
+          <strong>Research Profiles</strong>
+          <a href="#">Google Scholar</a>
+          <a href="#">IEEE Xplore</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </aside>
+
+      <div class="intro">
+        <h1>Arnab</h1>
+        <p class="subtitle">Ph.D. Candidate in Electrical Engineering · Power Electronics · Arizona State University</p>
+        <div class="tags">
+          <span class="tag">Grid-Forming Inverters</span>
+          <span class="tag">dVOC Control</span>
+          <span class="tag">LVRT / Fault Ride-Through</span>
+          <span class="tag">IEEE 1547 / IEEE 2800</span>
+          <span class="tag">SiC Power Converters</span>
+          <span class="tag">Renewable Energy Systems</span>
+        </div>
+
+        <section>
+          <h2>Research Overview</h2>
+          <p class="lead">
+            I work on control, protection, and hardware-aware design of power-electronic converters for renewable-rich power systems. My current research focuses on grid-forming inverter control, especially dispatchable virtual oscillator control, fault ride-through current limiting, and stability-preserving operation under severe grid disturbances.
+          </p>
+          <p>
+            My broader goal is to make inverter-dominated power systems more resilient, standards-compliant, and practically deployable by combining nonlinear control design, electromagnetic transient simulation, and experimental validation on high-frequency SiC converter platforms.
+          </p>
+        </section>
+
+        <section>
+          <h2>About Me</h2>
+          <p>
+            I am a Ph.D. candidate in Electrical Engineering at Arizona State University. My research lies at the intersection of power electronics, power systems, and control, with an emphasis on grid-forming inverters for solar PV and future low-inertia grids.
+          </p>
+          <p>
+            Before and during my Ph.D., I have worked on silicon-carbide converter characterization, automotive traction-inverter related hardware, and grid-connected inverter control. I am interested in industry R&amp;D roles where rigorous control theory meets real converter hardware.
+          </p>
+        </section>
+
+        <section>
+          <h2>Research Highlights</h2>
+          <div class="highlight-grid">
+            <div class="highlight-card">
+              <div class="num">01</div>
+              <h3>Fault-resilient GFM control</h3>
+              <p class="small">Current limiting strategies for dVOC-based grid-forming inverters during balanced and unbalanced voltage sags.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="num">02</div>
+              <h3>Voltage-guided PV curtailment</h3>
+              <p class="small">Fast DC-link protection through inverter-side voltage-aware MPPT curtailment without dissipative braking hardware.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="num">03</div>
+              <h3>Soft-switching SiC converters</h3>
+              <p class="small">Auxiliary resonant commutated pole concepts for high-efficiency, high-frequency SiC inverter operation.</p>
+            </div>
+          </div>
+
+          <details open>
+            <summary>Grid-Forming Inverter Current Limiting</summary>
+            <p class="venue">dVOC · LVRT · IEEE 1547 / IEEE 2800</p>
+            <p>
+              I develop voltage-source-preserving current limiting strategies that avoid relying on a conventional inner current loop. The work combines power-angle limiting, voltage-magnitude scaling, and sequence-aware current shaping to keep inverter currents within practical and standards-driven envelopes during grid faults.
+            </p>
+          </details>
+
+          <details>
+            <summary>Lossless DC-Link Protection for PV Inverters</summary>
+            <p class="venue">PV systems · MPPT curtailment · EMT simulation</p>
+            <p>
+              This work investigates inverter-side voltage-guided MPPT curtailment as a fast, non-dissipative way to prevent DC-link overvoltage during low-voltage ride-through events, while maintaining smooth recovery after fault clearing.
+            </p>
+          </details>
+
+          <details>
+            <summary>Asymmetric Auxiliary Resonant Commutated Pole</summary>
+            <p class="venue">SiC MOSFETs · ZVT · high-frequency inverter hardware</p>
+            <p>
+              I study soft-switching auxiliary circuit architectures that reduce switching loss in high-frequency SiC inverters while avoiding split-DC-link balancing and excessive auxiliary switch voltage stress.
+            </p>
+          </details>
+        </section>
+
+        <section>
+          <h2>Selected Publications</h2>
+          <ul class="publication-list">
+            <li>
+              <div class="paper-title">[Paper title on dVOC-based grid-forming inverter current limiting]</div>
+              <div class="small">Arnab, Coauthors · Conference/Journal · Year</div>
+              <div class="small"><a href="#">Paper</a> · <a href="#">Slides</a> · <a href="#">BibTeX</a></div>
+            </li>
+            <li>
+              <div class="paper-title">[Paper title on voltage-guided MPPT curtailment for DC-link protection]</div>
+              <div class="small">Arnab, Coauthors · Conference/Journal · Year</div>
+              <div class="small"><a href="#">Paper</a> · <a href="#">Poster</a> · <a href="#">BibTeX</a></div>
+            </li>
+            <li>
+              <div class="paper-title">[Paper title on AARCP / ZVT SiC inverter hardware]</div>
+              <div class="small">Arnab, Coauthors · Conference/Journal · Year</div>
+              <div class="small"><a href="#">Paper</a> · <a href="#">Video</a> · <a href="#">BibTeX</a></div>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>News</h2>
+          <p><strong>May 2026:</strong> Preparing dissertation work on grid-forming inverter control and fault ride-through.</p>
+          <p><strong>2026:</strong> Add your latest paper acceptance, award, tutorial, internship, or defense milestone here.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      Last updated: May 2026 · Built for GitHub Pages · Replace placeholder links before publishing.
+    </footer>
+  </main>
+</body>
+</html>
