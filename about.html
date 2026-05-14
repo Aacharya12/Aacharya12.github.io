@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>About | Arnab Acharya</title>
   <meta name="description" content="About Arnab Acharya, Ph.D. researcher in power electronics and grid-forming inverter control at Arizona State University." />
-
   <style>
     :root {
       --bg: #ffffff;
@@ -16,16 +14,12 @@
       --line: #e5e7eb;
       --soft: #f8fafc;
       --accent: #0f766e;
-      --max: 1080px;
+      --max: 880px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -41,36 +35,17 @@
       to { opacity: 1; }
     }
 
-    @keyframes highlightSweep {
-      0% {
-        transform: translateX(-140%);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.35;
-      }
-      55% {
-        opacity: 0.28;
-      }
-      100% {
-        transform: translateX(180%);
-        opacity: 0;
-      }
-    }
-
     a {
       color: var(--link);
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     .page {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 48px 24px 72px;
+      padding: 52px 24px 72px;
     }
 
     .back-link {
@@ -87,86 +62,44 @@
       text-decoration: none;
     }
 
-    .about-hero {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 34px;
-      align-items: center;
-      margin-bottom: 34px;
-    }
-
-    .about-photo {
-      width: 100%;
-      max-width: 360px;
-      height: 460px;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.10);
-      display: block;
-    }
-
-    .eyebrow {
-  display: inline-block;
-  margin: 0 0 12px;
-  padding: 5px 11px;
-  border-radius: 999px;
-  background: #f0fdfa;
-  color: var(--accent);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-    .bio-card {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: #fff;
-      padding: 30px 28px;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
-    }
-
-    .bio-card::before {
-  content: "";
-  position: absolute;
-  top: -25%;
-  left: 0;
-  width: 55%;
-  height: 150%;
-  background: linear-gradient(
-    110deg,
-    rgba(255,255,255,0) 0%,
-    rgba(15, 118, 110, 0.18) 42%,
-    rgba(37, 99, 235, 0.12) 55%,
-    rgba(255,255,255,0) 100%
-  );
-  transform: translateX(-150%);
-  animation: highlightSweep 1.75s ease-out 0.35s 1;
-  pointer-events: none;
-}
     h1 {
       margin: 0 0 10px;
-      font-size: clamp(2.1rem, 4vw, 3.15rem);
-      line-height: 1.1;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.12;
       letter-spacing: -0.04em;
     }
 
     .subtitle {
-      margin: 0 0 18px;
+      margin: 0 0 28px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.1rem;
     }
 
-    .lead {
-      font-size: 1.04rem;
-      margin-bottom: 14px;
+    @keyframes textSweep {
+      0% { background-position: 140% 0; }
+      100% { background-position: -140% 0; }
     }
 
-    p {
-      margin: 0 0 14px;
+    .animated-copy p {
+      background-image: linear-gradient(
+        100deg,
+        var(--text) 0%,
+        var(--text) 38%,
+        var(--accent) 48%,
+        #2563eb 52%,
+        var(--text) 62%,
+        var(--text) 100%
+      );
+      background-size: 260% 100%;
+      background-position: 140% 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: textSweep 1.35s ease-out 0.25s 1 forwards;
     }
+
+    .animated-copy p:nth-of-type(2) { animation-delay: 0.45s; }
+    .animated-copy p:nth-of-type(3) { animation-delay: 0.65s; }
 
     section {
       border-top: 1px solid var(--line);
@@ -179,6 +112,10 @@
       margin: 0 0 14px;
       letter-spacing: -0.02em;
     }
+
+    p { margin: 0 0 15px; }
+
+    .lead { font-size: 1.04rem; }
 
     .info-grid {
       display: grid;
@@ -213,85 +150,46 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 900px) {
-      .about-hero {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
-      .about-photo {
-        max-width: 320px;
-        height: 400px;
-      }
-    }
-
     @media (max-width: 700px) {
-      .page {
-        padding: 34px 18px 56px;
-      }
-
-      .about-photo {
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 4 / 5;
-      }
-
-      .bio-card {
-        padding: 22px 18px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
+      .page { padding: 34px 18px 56px; }
+      .info-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
   <main class="page">
     <a class="back-link" href="index.html">← Back to home</a>
 
-    <div class="about-hero">
-      <img class="about-photo" src="assets/arnab_me.jpg" alt="Arnab Acharya" />
+    <h1>About Me</h1>
 
-      <div class="bio-card">
-  <p class="eyebrow">About Me</p>
-  <h1>Arnab Acharya</h1>
-  <p class="subtitle">Power Electronics Researcher · Arizona State University</p>
-
-        <p class="lead">
-          I am a Ph.D. researcher in Power Electronics at Arizona State University, working on grid-forming inverter control, fault ride-through, and reliable operation of inverter-based resources in renewable-rich power systems.
-        </p>
-
-        <p>
-          My research focuses on dispatchable virtual oscillator control, current limiting, low-voltage ride-through, and stability of grid-forming inverters under large grid disturbances. I am interested in control methods that preserve the voltage-source behavior of grid-forming converters while making them practical for real power-system faults and standards-driven operation.
-        </p>
-
-        <p>
-          I enjoy working across the full stack of power electronics research: control theory, electromagnetic transient simulation, embedded implementation, hardware testing, and experimental validation. My longer-term goal is to contribute to industry R&amp;D in power electronics, renewable energy systems, and advanced inverter control.
-        </p>
-      </div>
-    </div>
+    <section class="animated-copy">
+      <h2>Brief Biography</h2>
+      <p class="lead">
+        I am a Ph.D. researcher in power electronics at Arizona State University, working on grid-forming inverter control, fault ride-through, and reliable operation of inverter-based resources in renewable-rich power systems.
+      </p>
+      <p>
+        My research focuses on dispatchable virtual oscillator control, current limiting, low-voltage ride-through, and stability of grid-forming inverters under large grid disturbances. I am interested in control methods that preserve the voltage-source behavior of grid-forming converters while making them practical for real power-system faults and standards-driven operation.
+      </p>
+      <p>
+        I enjoy working across the full stack of power electronics research: control theory, electromagnetic transient simulation, embedded implementation, hardware testing, and experimental validation. My longer-term goal is to contribute to industry R&amp;D in power electronics, renewable energy systems, and advanced inverter control.
+      </p>
+    </section>
 
     <section>
       <h2>Background</h2>
-
       <div class="info-grid">
         <div class="info-card">
           <strong>Current Role</strong>
           <span>Ph.D. researcher in Electrical Engineering at Arizona State University.</span>
         </div>
-
         <div class="info-card">
           <strong>Research Area</strong>
           <span>Grid-forming inverters, dVOC control, LVRT, SiC/GaN converters, and renewable energy systems.</span>
         </div>
-
         <div class="info-card">
           <strong>Industry Experience</strong>
           <span>Onsemi, NREL, and Mercedes-Benz Research &amp; Development India.</span>
         </div>
-
         <div class="info-card">
           <strong>Technical Interests</strong>
           <span>Power converter control, hardware-aware protection, embedded implementation, and standards-compliant inverter operation.</span>
@@ -301,7 +199,6 @@
 
     <section>
       <h2>Research Motivation</h2>
-
       <p>
         As power systems move toward higher penetration of inverter-based resources, converters must do more than simply inject power. They must support the grid, remain stable during disturbances, and operate safely within hardware limits. My work is motivated by this transition: making grid-forming inverters robust enough for realistic grid events while keeping the control structure implementable on real converter platforms.
       </p>
