@@ -228,10 +228,19 @@
       font-style: italic;
     }
 
-    .education-detail .cgpa {
+    .school-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .school-logo {
+      width: 54px;
+      height: auto;
+      object-fit: contain;
       display: block;
-      margin-top: 2px;
-      font-weight: 700;
+      margin-bottom: 6px;
     }
 
     footer {
@@ -310,10 +319,12 @@
 
       <div class="education-list">
         <div class="education-item">
-          <div class="education-year">2021-present</div>
+          <div class="education-year">
+            <img class="school-logo" src="assets/asu-logo.png" alt="Arizona State University logo" />
+            2021-present
+          </div>
           <div class="education-detail">
             <strong>Ph.D.</strong>, <em>Department of Electrical Engineering</em>, <strong>Arizona State University (ASU)</strong>, <em>Tempe, AZ, USA</em>
-            <span class="cgpa">CGPA 4.00</span>
           </div>
         </div>
 
@@ -321,13 +332,6 @@
           <div class="education-year">2017-2020</div>
           <div class="education-detail">
             <strong>M.S. (by research)</strong>, <em>Department of Electrical Engineering</em>, <strong>Indian Institute Technology Kharagpur (IIT - Kharagpur)</strong>, <em>India</em>
-          </div>
-        </div>
-
-        <div class="education-item">
-          <div class="education-year">2010-2014</div>
-          <div class="education-detail">
-            <strong>B.Tech</strong>, <em>Department of Electrical Engineering</em>, <strong>West Bengal University of Technology</strong>, <em>Kolkata, India</em>
           </div>
         </div>
       </div>
