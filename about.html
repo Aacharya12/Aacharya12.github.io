@@ -108,7 +108,9 @@
     }
 
     .eyebrow {
-      display: inline-block;
+      align-self: flex-start;
+      display: inline-flex;
+      width: auto;
       margin: 0 0 18px;
       padding: 6px 13px;
       border-radius: 999px;
@@ -128,29 +130,9 @@
       animation: paragraphRise 0.65s ease-out forwards;
     }
 
-    .bio-copy p::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 70px;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), #2563eb);
-      transform: scaleX(0);
-      transform-origin: left;
-      opacity: 0;
-      animation: accentDraw 0.7s ease-out forwards;
-    }
-
     .bio-copy p:nth-of-type(1) { animation-delay: 0.12s; }
-    .bio-copy p:nth-of-type(1)::after { animation-delay: 0.42s; }
-
     .bio-copy p:nth-of-type(2) { animation-delay: 0.28s; }
-    .bio-copy p:nth-of-type(2)::after { animation-delay: 0.58s; }
-
     .bio-copy p:nth-of-type(3) { animation-delay: 0.44s; }
-    .bio-copy p:nth-of-type(3)::after { animation-delay: 0.74s; }
 
     p { margin: 0 0 14px; }
 
