@@ -42,10 +42,11 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes accentDraw {
-      0% { transform: scaleX(0); opacity: 0; }
-      25% { opacity: 1; }
-      100% { transform: scaleX(1); opacity: 1; }
+    @keyframes titleHighlightSweep {
+      0% { transform: translateX(-120%); opacity: 0; }
+      12% { opacity: 1; }
+      78% { opacity: 1; }
+      100% { transform: translateX(120%); opacity: 0; }
     }
 
     a {
@@ -109,17 +110,44 @@
 
     .eyebrow {
       align-self: flex-start;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       display: inline-flex;
       width: auto;
       margin: 0 0 18px;
       padding: 6px 13px;
-      border-radius: 999px;
-      background: #f0fdfa;
-      color: var(--accent);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text);
       font-size: 0.82rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .sweep-title::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 198, 39, 0.62);
+      border-radius: 6px;
+      transform: translateX(-120%);
+      animation: titleHighlightSweep 1.35s ease-out 0.25s 1 forwards;
+      z-index: -1;
+    }
+
+    .eyebrow::after,
+    .sweep-title::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(140, 29, 64, 0.13);
+      border-radius: 6px;
+      transform: translateX(-120%);
+      animation: titleHighlightSweep 1.35s ease-out 0.34s 1 forwards;
+      z-index: -2;
     }
 
     .bio-copy p {
@@ -150,29 +178,60 @@
       letter-spacing: -0.02em;
     }
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+    .sweep-title {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .education-list {
       margin-top: 18px;
+      display: grid;
+      gap: 14px;
     }
 
-    .info-card {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--soft);
-      padding: 16px;
+    .education-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--line);
     }
 
-    .info-card strong {
-      display: block;
-      margin-bottom: 6px;
+    .education-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .education-year {
+      font-weight: 700;
       color: var(--text);
+      font-size: 0.95rem;
+      white-space: nowrap;
     }
 
-    .info-card span {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .education-detail {
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .education-detail strong {
+      font-weight: 700;
+    }
+
+    .education-detail em {
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .education-detail .cgpa {
+      display: block;
+      margin-top: 2px;
+      font-weight: 700;
     }
 
     footer {
@@ -212,7 +271,10 @@
 
       .bio-card { padding: 22px 18px; }
 
-      .info-grid { grid-template-columns: 1fr; }
+      .education-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
     }
   </style>
 </head>
@@ -244,27 +306,29 @@
     </div>
 
     <section>
-      <h2>Background</h2>
+      <h2 class="sweep-title">Education</h2>
 
-      <div class="info-grid">
-        <div class="info-card">
-          <strong>Current Role</strong>
-          <span>Ph.D. researcher in Electrical Engineering at Arizona State University.</span>
+      <div class="education-list">
+        <div class="education-item">
+          <div class="education-year">2021-present</div>
+          <div class="education-detail">
+            <strong>Ph.D.</strong>, <em>Department of Electrical Engineering</em>, <strong>Arizona State University (ASU)</strong>, <em>Tempe, AZ, USA</em>
+            <span class="cgpa">CGPA 4.00</span>
+          </div>
         </div>
 
-        <div class="info-card">
-          <strong>Research Area</strong>
-          <span>Grid-forming inverters, dVOC control, LVRT, SiC/GaN converters, and renewable energy systems.</span>
+        <div class="education-item">
+          <div class="education-year">2017-2020</div>
+          <div class="education-detail">
+            <strong>M.S. (by research)</strong>, <em>Department of Electrical Engineering</em>, <strong>Indian Institute Technology Kharagpur (IIT - Kharagpur)</strong>, <em>India</em>
+          </div>
         </div>
 
-        <div class="info-card">
-          <strong>Industry Experience</strong>
-          <span>Onsemi, NREL, and Mercedes-Benz Research &amp; Development India.</span>
-        </div>
-
-        <div class="info-card">
-          <strong>Technical Interests</strong>
-          <span>Power converter control, hardware-aware protection, embedded implementation, and standards-compliant inverter operation.</span>
+        <div class="education-item">
+          <div class="education-year">2010-2014</div>
+          <div class="education-detail">
+            <strong>B.Tech</strong>, <em>Department of Electrical Engineering</em>, <strong>West Bengal University of Technology</strong>, <em>Kolkata, India</em>
+          </div>
         </div>
       </div>
     </section>
