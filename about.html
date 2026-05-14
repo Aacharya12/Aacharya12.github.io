@@ -37,9 +37,15 @@
       to { opacity: 1; }
     }
 
-    @keyframes textSweep {
-      0% { background-position: 140% 0; }
-      100% { background-position: -140% 0; }
+    @keyframes paragraphRise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes accentDraw {
+      0% { transform: scaleX(0); opacity: 0; }
+      25% { opacity: 1; }
+      100% { transform: scaleX(1); opacity: 1; }
     }
 
     a {
@@ -73,14 +79,15 @@
       display: grid;
       grid-template-columns: 360px 1fr;
       gap: 34px;
-      align-items: center;
+      align-items: stretch;
       margin-bottom: 34px;
     }
 
     .about-photo {
       width: 100%;
       max-width: 360px;
-      height: 460px;
+      height: 100%;
+      min-height: 500px;
       object-fit: cover;
       border-radius: 22px;
       border: 1px solid var(--line);
@@ -89,11 +96,15 @@
     }
 
     .bio-card {
+      min-height: 500px;
       border: 1px solid var(--line);
       border-radius: 22px;
       background: #fff;
-      padding: 30px 28px;
+      padding: 34px 32px;
       box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .eyebrow {
@@ -110,25 +121,36 @@
     }
 
     .bio-copy p {
-      background-image: linear-gradient(
-        100deg,
-        var(--text) 0%,
-        var(--text) 38%,
-        var(--accent) 48%,
-        #2563eb 52%,
-        var(--text) 62%,
-        var(--text) 100%
-      );
-      background-size: 260% 100%;
-      background-position: 140% 0;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: textSweep 1.35s ease-out 0.25s 1 forwards;
+      position: relative;
+      color: var(--text);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: paragraphRise 0.65s ease-out forwards;
     }
 
-    .bio-copy p:nth-of-type(2) { animation-delay: 0.45s; }
-    .bio-copy p:nth-of-type(3) { animation-delay: 0.65s; }
+    .bio-copy p::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 70px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), #2563eb);
+      transform: scaleX(0);
+      transform-origin: left;
+      opacity: 0;
+      animation: accentDraw 0.7s ease-out forwards;
+    }
+
+    .bio-copy p:nth-of-type(1) { animation-delay: 0.12s; }
+    .bio-copy p:nth-of-type(1)::after { animation-delay: 0.42s; }
+
+    .bio-copy p:nth-of-type(2) { animation-delay: 0.28s; }
+    .bio-copy p:nth-of-type(2)::after { animation-delay: 0.58s; }
+
+    .bio-copy p:nth-of-type(3) { animation-delay: 0.44s; }
+    .bio-copy p:nth-of-type(3)::after { animation-delay: 0.74s; }
 
     p { margin: 0 0 14px; }
 
@@ -188,6 +210,11 @@
       .about-photo {
         max-width: 320px;
         height: 400px;
+        min-height: 400px;
+      }
+
+      .bio-card {
+        min-height: auto;
       }
     }
 
@@ -197,6 +224,7 @@
       .about-photo {
         max-width: 100%;
         height: auto;
+        min-height: auto;
         aspect-ratio: 4 / 5;
       }
 
