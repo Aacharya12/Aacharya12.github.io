@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Arnab Acharya | Power Electronics Researcher</title>
-  <meta name="description" content="Personal academic website of Arnab Acharya, Ph.D. candidate in Electrical Engineering at Arizona State University working on power electronics, grid-forming inverters, and SiC converter systems." />
+  <meta name="description" content="Personal academic website of Arnab Acharya, Ph.D. researcher in Power Electronics at Arizona State University." />
+
   <style>
     :root {
       --bg: #ffffff;
@@ -17,7 +19,13 @@
       --max: 1080px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -25,7 +33,7 @@
       color: var(--text);
       background: var(--bg);
       line-height: 1.6;
-      animation: pageFade 0.55s ease-out both;
+      animation: pageFade 0.45s ease-out both;
     }
 
     @keyframes pageFade {
@@ -51,21 +59,14 @@
       text-decoration: none;
     }
 
-    a:hover { text-decoration: underline; }
+    a:hover {
+      text-decoration: underline;
+    }
 
     .page {
       max-width: var(--max);
       margin: 0 auto;
       padding: 40px 24px 64px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .hero {
-      display: block;
-      margin-bottom: 34px;
     }
 
     .menu-toggle {
@@ -77,7 +78,7 @@
       height: 44px;
       border: 1px solid var(--line);
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(10px);
       color: var(--text);
       cursor: pointer;
@@ -91,40 +92,6 @@
     .menu-toggle:hover {
       transform: translateY(-2px);
       box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
-    }
-
-    .back-to-top {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 1100;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-      color: var(--text);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(8px);
-      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .back-to-top.show {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    .back-to-top:hover {
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
-      transform: translateY(-2px);
     }
 
     .menu-toggle span,
@@ -164,6 +131,40 @@
       transform: translateY(-6px) rotate(-45deg);
     }
 
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1100;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+      transform: translateY(-2px);
+    }
+
     .profile-card {
       position: fixed;
       top: 0;
@@ -200,6 +201,11 @@
       pointer-events: auto;
     }
 
+    .hero {
+      display: block;
+      margin-bottom: 34px;
+    }
+
     .profile-img {
       width: 210px;
       height: 210px;
@@ -228,10 +234,11 @@
       color: var(--muted);
     }
 
-    .contact-block strong {
+    .contact-block strong,
+    .side-nav strong {
       display: block;
       color: var(--text);
-      margin: 14px 0 5px;
+      margin: 16px 0 6px;
       font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -242,6 +249,13 @@
       align-items: center;
       gap: 7px;
       margin: 6px 0;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      color: var(--muted);
+      flex: 0 0 16px;
     }
 
     .side-nav {
@@ -265,13 +279,6 @@
       color: var(--accent);
       padding-left: 4px;
       text-decoration: none;
-    }
-
-    .icon {
-      width: 16px;
-      height: 16px;
-      color: var(--muted);
-      flex: 0 0 16px;
     }
 
     .intro h1 {
@@ -327,7 +334,9 @@
       margin: 0;
     }
 
-    p { margin: 0 0 14px; }
+    p {
+      margin: 0 0 14px;
+    }
 
     .lead {
       font-size: 1.03rem;
@@ -425,47 +434,91 @@
     }
 
     @media (max-width: 780px) {
-      .page { width: 100%; padding: 82px 18px 48px; }
-      .profile-img { width: 170px; height: 170px; }
-      .highlight-grid { grid-template-columns: 1fr; }
+      .page {
+        width: 100%;
+        padding: 82px 18px 48px;
+      }
+
+      .profile-img {
+        width: 170px;
+        height: 170px;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-  <button class="menu-toggle" type="button" aria-label="Open sidebar" aria-expanded="false"><span></span></button>
+  <button class="menu-toggle" type="button" aria-label="Open sidebar" aria-expanded="false">
+    <span></span>
+  </button>
+
   <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+
   <main class="page">
     <div class="hero">
       <aside class="profile-card">
         <div class="contact-block">
           <strong>Contact</strong>
-          <a href="mailto:aachar21@asu.edu"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-7.07 5.3a.9.9 0 0 1-1.06 0L4.4 8.25A1 1 0 0 1 5.6 6.65L12 11.45l6.4-4.8a1 1 0 1 1 1.2 1.6Z"/></svg>aachar21@asu.edu</a>
+          <a href="mailto:aachar21@asu.edu">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-7.07 5.3a.9.9 0 0 1-1.06 0L4.4 8.25A1 1 0 0 1 5.6 6.65L12 11.45l6.4-4.8a1 1 0 1 1 1.2 1.6Z"/>
+            </svg>
+            aachar21@asu.edu
+          </a>
 
           <strong>Documents</strong>
-          <a href="assets/Arnab_Acharya_CV.pdf"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 2.5L17.5 8H14V4.5ZM8 13h8v1.6H8V13Zm0 3h8v1.6H8V16Zm0-6h5v1.6H8V10Z"/></svg>CV</a>
+          <a href="assets/Arnab_Acharya_CV.pdf">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm0 2.5L17.5 8H14V4.5ZM8 13h8v1.6H8V13Zm0 3h8v1.6H8V16Zm0-6h5v1.6H8V10Z"/>
+            </svg>
+            CV
+          </a>
 
           <strong>Research Profiles</strong>
-          <a href="https://scholar.google.com/citations?user=5-eZpEgAAAAJ&hl=en&oi=sra"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 1.8 9 12 15l10.2-6L12 3Zm0 13.2L5.8 12.6V16c0 2.1 2.8 3.8 6.2 3.8s6.2-1.7 6.2-3.8v-3.4L12 16.2Z"/></svg>Google Scholar</a>
-          <a href="https://www.linkedin.com/in/arnab-acharya-930100127/"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V9H7.1v11.45ZM22.22 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
-          <a href="#"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.82-.26.82-.58v-2.1c-3.34.73-4.04-1.4-4.04-1.4-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.45c1.02 0 2.05.14 3.01.41 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/></svg>GitHub</a>
+          <a href="https://scholar.google.com/citations?user=5-eZpEgAAAAJ&hl=en&oi=sra">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3 1.8 9 12 15l10.2-6L12 3Zm0 13.2L5.8 12.6V16c0 2.1 2.8 3.8 6.2 3.8s6.2-1.7 6.2-3.8v-3.4L12 16.2Z"/>
+            </svg>
+            Google Scholar
+          </a>
+
+          <a href="https://www.linkedin.com/in/arnab-acharya-930100127/">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V9H7.1v11.45ZM22.22 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/>
+            </svg>
+            LinkedIn
+          </a>
+
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.82-.26.82-.58v-2.1c-3.34.73-4.04-1.4-4.04-1.4-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.45c1.02 0 2.05.14 3.01.41 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/>
+            </svg>
+            GitHub
+          </a>
         </div>
 
         <nav class="side-nav" aria-label="Page navigation">
           <strong>On this page</strong>
-          <a href="#research-overview">Research Overview <span>→</span></a>
-          <a href="#about">About Me <span>→</span></a>
+          <a href="about.html">About Me <span>→</span></a>
           <a href="#research-highlights">Research Highlights <span>→</span></a>
           <a href="#publications">Publications <span>→</span></a>
           <a href="#experience">Experience <span>→</span></a>
           <a href="#awards-service">Awards &amp; Service <span>→</span></a>
         </nav>
       </aside>
+
       <div class="sidebar-overlay" aria-hidden="true"></div>
 
       <div class="intro">
         <img class="profile-img main-profile-img" src="assets/profile.jpg" alt="Arnab Acharya profile photo" />
+
         <h1>Arnab Acharya</h1>
         <p class="subtitle">Ph.D. in Power Electronics, Arizona State University</p>
+
         <div class="tags">
           <span class="tag">Power Electronics</span>
           <span class="tag">Grid-Forming Inverters</span>
@@ -478,40 +531,39 @@
         <section id="research-overview">
           <h2>Research Overview</h2>
           <p class="lead">
-            I am a Ph.D. candidate in Electrical Engineering at Arizona State University, working on power electronics and grid-forming inverter control for renewable-rich power systems. My current research focuses on dispatchable virtual oscillator control, fault ride-through, current limiting, and stability of grid-forming inverters under adverse grid conditions.
+            I am a Ph.D. researcher in Power Electronics at Arizona State University, working on power electronics and grid-forming inverter control for renewable-rich power systems. My current research focuses on dispatchable virtual oscillator control, fault ride-through, current limiting, and stability of grid-forming inverters under adverse grid conditions.
           </p>
           <p>
             My work combines nonlinear control design, electromagnetic transient simulation, embedded implementation, and experimental validation on high-power three-phase SiC/IGBT inverter platforms. I am especially interested in practical control and protection methods that allow inverter-based resources to behave reliably during large grid disturbances.
           </p>
         </section>
 
-        <section id="about">
-          <h2>About Me</h2>
-          <p>
-            I am part of the power electronics and power systems research community at ASU. My Ph.D. research is connected to grid-forming inverter applications, including high-power inverter operation, low-voltage ride-through, and standards-oriented performance under grid transients.
-          </p>
-          <p>
-            Previously, I worked at Onsemi on SiC device characterization and automotive traction-inverter applications, at the National Renewable Energy Laboratory on electric-vehicle grid integration and battery systems, and at Mercedes-Benz Research &amp; Development India on EV onboard-charger development and technical compliance.
-          </p>
-        </section>
-
         <section id="research-highlights">
           <h2>Research Highlights</h2>
+
           <div class="highlight-grid">
             <div class="highlight-card">
               <div class="num">01</div>
               <h3>Fault-resilient GFM control</h3>
-              <p class="small">Current limiting and LVRT strategies for dVOC-based grid-forming inverters during severe grid disturbances.</p>
+              <p class="small">
+                Current limiting and LVRT strategies for dVOC-based grid-forming inverters during severe grid disturbances.
+              </p>
             </div>
+
             <div class="highlight-card">
               <div class="num">02</div>
               <h3>High-power inverter validation</h3>
-              <p class="small">Simulation and implementation of three-phase SiC/IGBT inverter systems for grid-forming applications.</p>
+              <p class="small">
+                Simulation and implementation of three-phase SiC/IGBT inverter systems for grid-forming applications.
+              </p>
             </div>
+
             <div class="highlight-card">
               <div class="num">03</div>
               <h3>Soft-switching converters</h3>
-              <p class="small">Topology and hardware design for high-efficiency SiC/GaN power converters and data-center power delivery.</p>
+              <p class="small">
+                Topology and hardware design for high-efficiency SiC/GaN power converters and data-center power delivery.
+              </p>
             </div>
           </div>
 
@@ -542,19 +594,23 @@
 
         <section id="publications">
           <h2>Selected Publications</h2>
+
           <ul class="publication-list">
             <li>
               <div class="paper-title">Dynamic Bus Voltage Reconfiguration in a Two-Stage Multi-Phase Converter for Fast Transients</div>
               <div class="small">A. Acharya, V. Inder Kumar, and S. Kapat · IEEE Journal of Emerging and Selected Topics in Power Electronics, 2021</div>
             </li>
+
             <li>
               <div class="paper-title">Dual-dVOC Based Controlled Negative Sequence Current Injection for Grid-Forming Inverters under Asymmetrical Grid Conditions</div>
               <div class="small">A. Acharya and R. Ayyanar · IEEE Power &amp; Energy Society General Meeting, 2023</div>
             </li>
+
             <li>
               <div class="paper-title">Enhancing Stability of dVOC Controlled Grid-Forming Inverters Under Large Grid Transients - A Power Angle Based Approach</div>
               <div class="small">A. Acharya and R. Ayyanar · IEEE Energy Conversion Congress and Exposition, 2023</div>
             </li>
+
             <li>
               <div class="paper-title">Dynamic Bus Voltage Configuration in a Two-Stage Multi-Phase Buck Converter to Mitigate Transients</div>
               <div class="small">A. Acharya, V. I. Kumar, and S. Kapat · IEEE Applied Power Electronics Conference and Exposition, 2019</div>
@@ -564,30 +620,48 @@
 
         <section id="experience">
           <h2>Experience</h2>
+
           <ul class="experience-list">
             <li>
               <div class="role-title">Graduate Application Intern · Onsemi</div>
               <div class="small">Automotive Traction Solution Group · May-August 2024</div>
-              <p class="small">SiC device characterization, double-pulse testing, loss modeling, gate-driver PCB testing, and traction-inverter protection.</p>
+              <p class="small">
+                SiC device characterization, double-pulse testing, loss modeling, gate-driver PCB testing, and traction-inverter protection.
+              </p>
             </li>
+
             <li>
               <div class="role-title">Graduate Intern · National Renewable Energy Laboratory</div>
               <div class="small">Electric Vehicle Grid Integration Team · May-August 2023</div>
-              <p class="small">Battery systems, multi-chemistry EV/BTMS battery stacks, and active cell balancing using a dual-active-bridge converter platform.</p>
+              <p class="small">
+                Battery systems, multi-chemistry EV/BTMS battery stacks, and active cell balancing using a dual-active-bridge converter platform.
+              </p>
             </li>
+
             <li>
               <div class="role-title">Engineer · Mercedes-Benz Research &amp; Development India</div>
               <div class="small">Technical Compliance Management System Team · February 2020-July 2021</div>
-              <p class="small">EV onboard-charger development, DC network optimization, and automotive technical compliance.</p>
+              <p class="small">
+                EV onboard-charger development, DC network optimization, and automotive technical compliance.
+              </p>
             </li>
           </ul>
         </section>
 
         <section id="awards-service">
           <h2>Awards and Service</h2>
-          <p><strong>Professional Education Seminar, APEC 2024:</strong> Conducted a seminar on PV inverter design, including topologies, control, and system considerations.</p>
-          <p><strong>Best Presentation Award, APEC 2019:</strong> Recognized for work presented in the “Converters for Data Centers” lecture session.</p>
-          <p><strong>Reviewer Service:</strong> IEEE Transactions on Power Electronics, IEEE Journal of Emerging and Selected Topics in Industrial Electronics, and IEEE Transactions on Circuits and Systems II.</p>
+
+          <p>
+            <strong>Professional Education Seminar, APEC 2024:</strong> Conducted a seminar on PV inverter design, including topologies, control, and system considerations.
+          </p>
+
+          <p>
+            <strong>Best Presentation Award, APEC 2019:</strong> Recognized for work presented in the “Converters for Data Centers” lecture session.
+          </p>
+
+          <p>
+            <strong>Reviewer Service:</strong> IEEE Transactions on Power Electronics, IEEE Journal of Emerging and Selected Topics in Industrial Electronics, and IEEE Transactions on Circuits and Systems II.
+          </p>
         </section>
       </div>
     </div>
@@ -596,6 +670,7 @@
       Last updated: May 2026 · Built for GitHub Pages.
     </footer>
   </main>
+
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const backToTop = document.querySelector('.back-to-top');
