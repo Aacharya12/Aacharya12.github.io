@@ -337,12 +337,20 @@
       color: var(--muted);
     }
 
+    .top-nav-wrap {
+      border-bottom: 1px solid var(--line);
+      margin: 18px 0 26px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: landingRise 0.65s ease-out 0.28s forwards;
+    }
+
     .top-nav {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       gap: 0;
-      margin: 18px 0 0;
+      margin: 0;
     }
 
     .top-nav a {
@@ -353,8 +361,20 @@
       padding: 0 18px;
       color: var(--text);
       font-size: 0.98rem;
-      border-bottom: 4px solid transparent;
-      transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .top-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 6px;
+      background: var(--asu-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.24s ease;
     }
 
     .top-nav a:hover {
@@ -363,32 +383,28 @@
       text-decoration: none;
     }
 
+    .top-nav a:hover::after,
+    .top-nav a.active::after {
+      transform: scaleX(1);
+    }
+
     .top-nav a.active {
-      border-bottom-color: var(--asu-gold);
       font-weight: 700;
     }
 
-   .home-link {
-  justify-content: center;
-  width: 52px;
-  padding: 0;
-}
-
-    .home-icon {
-      width: 18px;
-      height: 18px;
-      flex: 0 0 18px;
+    .home-link {
+      justify-content: center;
+      width: 52px;
+      padding: 0;
     }
 
-    .nav-divider {
-      width: 100%;
-      height: 1px;
-      background: var(--line);
-      margin: 0 0 26px;
+    .home-icon {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
     }
 
     .subtitle,
-    .top-nav,
     #research-overview,
     #research-highlights,
     #publications,
@@ -400,7 +416,6 @@
     }
 
     .subtitle { animation-delay: 0.18s; }
-    .top-nav { animation-delay: 0.28s; }
     #research-overview { animation-delay: 0.38s; }
     #research-highlights { animation-delay: 0.48s; }
     #publications { animation-delay: 0.58s; }
@@ -411,6 +426,12 @@
       border-top: 1px solid var(--line);
       padding-top: 26px;
       margin-top: 28px;
+    }
+
+    #research-overview {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
     }
 
     h2 {
@@ -540,6 +561,10 @@
         min-height: 38px;
       }
 
+      .home-link {
+        width: 46px;
+      }
+
       .highlight-grid {
         grid-template-columns: 1fr;
       }
@@ -606,19 +631,21 @@
         <h1>Arnab Acharya</h1>
         <p class="subtitle">Ph.D. in Power Electronics, Arizona State University</p>
 
-        <nav class="top-nav" aria-label="Main navigation">
-          <a class="active home-link" href="index.html" aria-label="Home">
-            <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-            </svg>
-          </a>
+        <div class="top-nav-wrap">
+          <nav class="top-nav" aria-label="Main navigation">
+            <a class="active home-link" href="index.html" aria-label="Home" title="Home">
+              <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+            </a>
 
-          <a href="about.html">About Me</a>
-          <a href="#research-highlights">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
-          <a href="#awards-service">Awards &amp; Service</a>
-        </nav>
+            <a href="about.html">About Me</a>
+            <a href="#research-highlights">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#experience">Experience</a>
+            <a href="#awards-service">Awards &amp; Service</a>
+          </nav>
+        </div>
 
         <section id="research-overview">
           <h2>Research Overview</h2>
