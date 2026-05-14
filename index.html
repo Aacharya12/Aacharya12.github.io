@@ -93,6 +93,40 @@
       box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
     }
 
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1100;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+      transform: translateY(-2px);
+    }
+
     .menu-toggle span,
     .menu-toggle span::before,
     .menu-toggle span::after {
@@ -399,6 +433,7 @@
 </head>
 <body>
   <button class="menu-toggle" type="button" aria-label="Open sidebar" aria-expanded="false"><span></span></button>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
   <main class="page">
     <div class="hero">
       <aside class="profile-card">
@@ -563,6 +598,7 @@
   </main>
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
+    const backToTop = document.querySelector('.back-to-top');
     const overlay = document.querySelector('.sidebar-overlay');
     const sidebarLinks = document.querySelectorAll('.profile-card a');
 
@@ -584,6 +620,14 @@
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') setMenu(false);
+    });
+
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('show', window.scrollY > 420);
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
