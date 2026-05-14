@@ -16,7 +16,9 @@
       --line: #e5e7eb;
       --soft: #f8fafc;
       --accent: #0f766e;
-      --max: 1080px;
+      --asu-gold: #ffc627;
+      --asu-maroon: #8c1d40;
+      --max: 1512px;
     }
 
     * { box-sizing: border-box; }
@@ -198,7 +200,7 @@
       grid-template-columns: 110px 1fr;
       gap: 18px;
       align-items: start;
-      padding-bottom: 14px;
+      padding-bottom: 18px;
       border-bottom: 1px dashed var(--line);
     }
 
@@ -210,13 +212,15 @@
     .education-year {
       font-weight: 700;
       color: var(--text);
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       white-space: nowrap;
+      text-align: center;
     }
 
     .education-detail {
       color: var(--text);
-      font-size: 0.98rem;
+      font-size: 1.04rem;
+      line-height: 1.7;
     }
 
     .education-detail strong {
@@ -231,15 +235,21 @@
     .education-desc {
       margin: 8px 0 0;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 1.04rem;
+      line-height: 1.7;
+    }
+
+    .patent-note {
+      margin-top: 10px;
+      color: var(--text);
+      font-size: 1.02rem;
       line-height: 1.6;
     }
 
-    .school-line {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
+    .patent-note .star {
+      color: var(--asu-gold);
+      font-size: 1.12rem;
+      margin-right: 6px;
     }
 
     .school-logo {
@@ -248,10 +258,6 @@
       object-fit: contain;
       display: block;
       margin: 0 auto 8px;
-    }
-
-    .education-year {
-      text-align: center;
     }
 
     footer {
@@ -337,20 +343,23 @@
           <div class="education-detail">
             <strong>Ph.D.</strong>, <em>Department of Electrical Engineering</em>, <strong>Arizona State University (ASU)</strong>, <em>Tempe, AZ, USA</em>
             <p class="education-desc">
-              Researching grid-forming inverter control for renewable-rich power systems, with emphasis on dVOC-based control, LVRT/fault mitigation, IEEE 2800-oriented current limiting, and experimental validation on high-power three-phase SiC/IGBT inverter platforms.
+              Researching grid-forming inverter control for renewable-rich power systems, with emphasis on dVOC-based control, LVRT/fault mitigation, IEEE 2800-oriented current limiting, and experimental validation of soft-switching SiC-based inverter topologies.
             </p>
           </div>
         </div>
 
         <div class="education-item">
           <div class="education-year">
-            <img class="school-logo" src="assets/kgp.svg" alt="IIT kgp logo" />
+            <img class="school-logo" src="assets/kgp.svg" alt="IIT Kharagpur logo" />
             2017-2020
           </div>
           <div class="education-detail">
             <strong>M.S. (by research)</strong>, <em>Department of Electrical Engineering</em>, <strong>Indian Institute of Technology Kharagpur (IIT Kharagpur)</strong>, <em>India</em>
             <p class="education-desc">
               Developed a reconfigurable bus-voltage architecture for a two-stage multi-phase buck converter targeting 48 V to point-of-load data-center applications, including GaN-based hardware prototyping, transient-performance improvement, and FPGA-interface signal-conditioning hardware.
+            </p>
+            <p class="patent-note">
+              <span class="star">★</span><strong>Patent granted by Govt. of India</strong> · <a href="assets/indian_patent_504302.pdf">[PDF]</a>
             </p>
           </div>
         </div>
