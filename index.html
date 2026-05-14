@@ -14,7 +14,7 @@
       --line: #e5e7eb;
       --soft: #f8fafc;
       --accent: #0f766e;
-      --max: 1440px;
+      --max: 1080px;
     }
 
     * { box-sizing: border-box; }
@@ -54,7 +54,7 @@
     a:hover { text-decoration: underline; }
 
     .page {
-      width: min(96vw, var(--max));
+      max-width: var(--max);
       margin: 0 auto;
       padding: 40px 24px 64px;
     }
@@ -183,6 +183,10 @@
     .profile-img:hover {
       transform: translateY(-3px) scale(1.02);
       box-shadow: 0 14px 36px rgba(15, 23, 42, 0.14);
+    }
+
+    .main-profile-img {
+      margin-bottom: 20px;
     }
 
     .contact-block {
@@ -398,9 +402,6 @@
   <main class="page">
     <div class="hero">
       <aside class="profile-card">
-        <!-- Save your uploaded photo as assets/profile.jpg in the GitHub repo. -->
-        <img class="profile-img" src="assets/profile.jpg" alt="Arnab Acharya profile photo" />
-
         <div class="contact-block">
           <strong>Contact</strong>
           <a href="mailto:aachar21@asu.edu"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-7.07 5.3a.9.9 0 0 1-1.06 0L4.4 8.25A1 1 0 0 1 5.6 6.65L12 11.45l6.4-4.8a1 1 0 1 1 1.2 1.6Z"/></svg>Email</a>
@@ -427,6 +428,7 @@
       <div class="sidebar-overlay" aria-hidden="true"></div>
 
       <div class="intro">
+        <img class="profile-img main-profile-img" src="assets/profile.jpg" alt="Arnab Acharya profile photo" />
         <h1>Arnab Acharya</h1>
         <p class="subtitle">Ph.D. in Power Electronics, Arizona State University</p>
         <div class="tags">
